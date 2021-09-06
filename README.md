@@ -3,8 +3,8 @@ piplos/php-alpine
 [![Build, test and publish images](https://github.com/piplos/php-alpine/actions/workflows/build.yml/badge.svg)](https://github.com/piplos/php-alpine/actions/workflows/build.yml)
 
 ## How to use
-- For Prod version: **piplosmedia/php-fpm-prod:<version>**
-- For Develop version: **piplosmedia/php-fpm-dev:<version>**
+- For Prod version: **piplosmedia/php-fpm-prod:**_version_
+- For Develop version: **piplosmedia/php-fpm-dev:**_version_
 
 ## PHP-fpm versions:
 - Prod: **8.0**
