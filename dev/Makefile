@@ -2,17 +2,17 @@ SHELL := /bin/bash
 ALL: build
 .PHONY: build test push
 
-IMAGE := piplosmedia/php-fpm-dev
+IMAGE := piplosmedia/php-fpm
 VERSION ?= latest
 PHP_VERSION = $(firstword $(subst -, ,$(VERSION)))
 
 build:
-	@echo " =====> Building $(IMAGE):$(VERSION)..."
+	@echo " =====> Building $(IMAGE):$(VERSION)-dev ..."
 	@dir="$(subst -,/,$(VERSION))"; \
 	if [[ "$(VERSION)" == 'latest' ]]; then \
 		dir='.'; \
 	fi; \
-	docker image build --quiet -t $(IMAGE):$(VERSION) $${dir}
+	docker image build --quiet -t $(IMAGE):$(VERSION)-dev $${dir}
 
 test:
 	@echo -e "=====> Testing loaded extensions... \c"
@@ -27,4 +27,4 @@ test:
 	@echo 'OK'
 
 push:
-	docker image push $(IMAGE):$(VERSION)
+	docker image push $(IMAGE):$(VERSION)-dev

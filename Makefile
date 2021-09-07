@@ -2,7 +2,7 @@ SHELL := /bin/bash
 ALL: build
 .PHONY: build test push
 
-IMAGE := piplosmedia/php-fpm-prod
+IMAGE := piplosmedia/php-fpm
 VERSION ?= latest
 PHP_VERSION = $(firstword $(subst -, ,$(VERSION)))
 
