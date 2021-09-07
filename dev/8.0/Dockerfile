@@ -1,4 +1,4 @@
-FROM piplosmedia/php-fpm-prod:8.0
+FROM piplosmedia/php-fpm:8.0
 
 # Install XDebug.
 RUN apk add --no-cache --virtual build-essentials \
