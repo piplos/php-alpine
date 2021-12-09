@@ -15,9 +15,11 @@ RUN apk add --no-cache --virtual build-essentials \
     docker-php-ext-install opcache && \
     docker-php-ext-install exif && \
     docker-php-ext-install zip && \
-    pecl install -o -f imagick && \
+    yes '' | pecl install -o -f imagick && \
     docker-php-ext-enable imagick && \
     apk del build-essentials && rm -rf /usr/src/php*
+
+RUN apk add --no-cache php8-pecl-imagick
 
 RUN wget https://getcomposer.org/composer-stable.phar -O /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
