@@ -1,3 +1,4 @@
+
 FROM php:7.2-fpm-alpine
 
 RUN apk add --no-cache git wget libzip libpng libjpeg-turbo libwebp freetype icu supervisor geoip libmemcached ldb libldap libpq gmp
@@ -14,8 +15,6 @@ RUN apk add --no-cache --virtual build-essentials \
 RUN wget https://getcomposer.org/composer-stable.phar -O /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 
 ADD supervisord.conf /etc/supervisord.conf
-ADD crontab /crontab.txt
-RUN /usr/bin/crontab /crontab.txt
 
 STOPSIGNAL SIGQUIT
 EXPOSE 9000
