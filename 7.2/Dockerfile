@@ -1,7 +1,7 @@
 
 FROM php:7.2-fpm-alpine
 
-RUN apk add --no-cache git wget libzip libpng libjpeg-turbo libwebp freetype icu supervisor geoip libmemcached ldb libldap libpq gmp
+RUN apk add --no-cache mysql-client git wget libzip libpng libjpeg-turbo libwebp freetype icu supervisor geoip libmemcached ldb libldap libpq gmp
 RUN apk add --no-cache --virtual build-essentials \
     icu-dev icu-libs zlib-dev g++ make automake autoconf libzip-dev \
     postgresql-dev ldb-dev openldap-dev geoip-dev libsodium-dev gmp-dev libmemcached-dev \
