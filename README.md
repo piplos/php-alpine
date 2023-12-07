@@ -7,7 +7,6 @@ piplos/php-alpine
 - For Develop version: **piplosmedia/php-fpm:**_version_**-dev**
 
 ## PHP-fpm versions:
-**7.2**, **8.0**, **8.1**, **8.2**, **8.3**
-
+**7.2**, **8.0**, **8.1**
 ## Docker hubs:
 https://hub.docker.com/r/piplosmedia/php-fpm
