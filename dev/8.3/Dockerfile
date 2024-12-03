@@ -1,8 +1,7 @@
 FROM piplosmedia/php-fpm:8.3
 
 # Install XDebug.
-RUN apk add --update linux-headers \
-    && apk add --no-cache --virtual build-essentials g++ make automake autoconf \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug \
-    && apk del build-essentials && rm -rf /usr/src/php*
+RUN set -xe; \
+    apk --no-cache update && apk --no-cache upgrade \
+    && install-php-extensions xdebug \
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/cache/apk/*
