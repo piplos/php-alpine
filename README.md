@@ -10,3 +10,19 @@ piplos/php-alpine
 **7.2**, **8.0**, **8.1**, **8.2**, **8.3**
 ## Docker hubs:
 https://hub.docker.com/r/piplosmedia/php-fpm
+
+
+## Docker compose:
+```
+services: 
+  php: 
+    image: piplosmedia/php-fpm:8.3  
+    restart: always  
+    volumes:  
+      - ./crontab:/crontab.txt  
+    command: /bin/sh -c "/usr/bin/crontab /crontab.txt && /usr/bin/supervisord -c /etc/supervisord.conf"  
+    logging:  
+      driver: "json-file"  
+      options:  
+        max-size: "50m"
+```
