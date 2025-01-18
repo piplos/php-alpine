@@ -5,7 +5,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN set -xe; \
     apk --no-cache update && apk --no-cache upgrade \
     && apk add --no-cache git openssh supervisor \
-    && install-php-extensions gd mysqli pdo_mysql pgsql pdo_pgsql zip intl opcache exif imagick memcache inotify @composer \
+    && install-php-extensions gd mysqli pdo_mysql pgsql pdo_pgsql zip intl opcache exif imagick memcache memcached inotify @composer \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/cache/apk/*
 
 ADD supervisord.conf /etc/supervisord.conf
