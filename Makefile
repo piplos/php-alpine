@@ -16,7 +16,7 @@ build:
 
 test:
 	@echo -e "=====> Testing loaded extensions... \c"
-	@if [[ -z `docker image ls $(IMAGE) | grep "\s$(VERSION)\s"` ]]; then \
+	@if [[ -z `docker image ls --format '{{.Tag}}' $(IMAGE):$(VERSION) | grep -x '$(VERSION)'` ]]; then \
 		echo 'FAIL [Missing image!!!]'; \
 		exit 1; \
 	fi
